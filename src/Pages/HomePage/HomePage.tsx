@@ -7,7 +7,7 @@ import AboutMe from '../../Components/AboutMe/AboutMe';
 import Footer from '../../Components/Footer/Footer';
 import DesktopDescription from '../../Components/DesktopDescription/DesktopDescription';
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
     return (
       <div>
         <Header />
@@ -21,4 +21,4 @@ const Home: React.FC = () => {
     );
 };
 
-export default Home;
+export default HomePage;
