@@ -1,0 +1,17 @@
+@use '../../styles/variables' as *;
+@use '../../styles/typography' as *;
+
+.aotd-header {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid blue;
+    margin: 0 2rem;
+}
+
+.aotd-title {
+    font-family: $playfair-bold;
+    font-size: 6rem;
+    margin-top: 5rem;
+    width: 100%;
+    text-align: center;
+}

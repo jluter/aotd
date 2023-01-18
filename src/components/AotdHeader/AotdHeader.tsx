@@ -1,9 +1,10 @@
 import React from 'react';
+import './AotdHeader.scss';
 
 const AotdHeader: React.FC = () => {
     return (
-        <header>
-            <h1>Album of the Day</h1>
+        <header className="aotd-header">
+            <h1 className='aotd-title'>Album of the Day</h1>
         </header>
     );
 };
