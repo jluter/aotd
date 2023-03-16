@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './AotdPage.scss';
 import AotdHeader from '../../Components/AotdHeader/AotdHeader';
 
-const AotdPage: React.FC = () => {
-    return (
-        <main className='aotd'>
+class AotdPage extends Component {
+    render() {
+
+        return (
+            <main className='aotd'>
             <AotdHeader />
         </main>
     );
+    }
 };
 
 export default AotdPage;
