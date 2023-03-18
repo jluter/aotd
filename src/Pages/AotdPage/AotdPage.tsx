@@ -4,10 +4,20 @@ import AotdHeader from '../../Components/AotdHeader/AotdHeader';
 
 class AotdPage extends Component {
 
+    state = {
+        artistForm: '',
+    };
+
+
+    handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({artistForm: event.target.value})
+    }
+
     handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(event);
+        console.log(this.state.artistForm);
     }
+
 
     render() {
 
@@ -15,8 +25,8 @@ class AotdPage extends Component {
             <main className='aotd'>
                 <AotdHeader />
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder='Artist name'></input>
-                    <button type='submit'>Submit</button>
+                    <input type="text" onChange={this.handleInputChange} placeholder='Artist name'></input>
+                    <button type='submit' value='artistButton'>Submit</button>
                 </form>
             </main>
     );
