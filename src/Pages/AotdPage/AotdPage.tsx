@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './AotdPage.scss';
 import AotdHeader from '../../Components/AotdHeader/AotdHeader';
+import axios from 'axios';
 
 class AotdPage extends Component {
 
@@ -10,12 +11,32 @@ class AotdPage extends Component {
 
 
     handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        this.setState({artistForm: event.target.value})
-    }
+        this.setState({
+            artistForm: event.target.value
+        });
+    };
 
     handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         console.log(this.state.artistForm);
+
+        // axios.put('http://localhost:5050/aotd', {
+        //     artistName: this.state.artistForm,
+        // })
+        // .then((response) => {
+        //     console.log(response.data);
+        // })
+        // .catch((error) => {
+        //     console.log(error)
+        // })
+
+        axios.get('http://localhost:5050/aotd')
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            console.log(error)
+        })
     }
 
 
