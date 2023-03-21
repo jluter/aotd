@@ -10,7 +10,7 @@ class AotdPage extends Component {
     };
 
 
-    handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    handleArtistNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({
             artistForm: event.target.value
         });
@@ -25,7 +25,6 @@ class AotdPage extends Component {
         })
         .then((response) => {
             console.log(response.data);
-            console.log(this.state.artistForm);
         })
         .catch((error) => {
             console.log(error)
@@ -47,7 +46,7 @@ class AotdPage extends Component {
             <main className='aotd'>
                 <AotdHeader />
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" onChange={this.handleInputChange} placeholder='Artist name'></input>
+                    <input type="text" onChange={this.handleArtistNameChange} placeholder='Artist name'></input>
                     <button type='submit' value='artistButton'>Submit</button>
                 </form>
             </main>
