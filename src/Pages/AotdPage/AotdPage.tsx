@@ -27,6 +27,12 @@ class AotdPage extends Component {
             console.log(response.data);
             this.getArtist();
         })
+        .then(() =>{
+            //reset state and input box to be blank
+            this.setState({
+                artistForm: ''
+            })
+        })
         .catch((error) => {
             console.log(error)
         })
@@ -51,7 +57,7 @@ class AotdPage extends Component {
             <main className='aotd'>
                 <AotdHeader />
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" onChange={this.handleArtistNameChange} placeholder='Artist name'></input>
+                    <input type="text" onChange={this.handleArtistNameChange} placeholder='Artist name' value={this.state.artistForm}></input>
                     <button type='submit' value='artistButton'>Submit</button>
                 </form>
             </main>
