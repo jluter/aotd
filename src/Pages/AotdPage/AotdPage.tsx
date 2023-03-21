@@ -20,15 +20,16 @@ class AotdPage extends Component {
         event.preventDefault();
         console.log(this.state.artistForm);
 
-        // axios.put('http://localhost:5050/aotd', {
-        //     artistName: this.state.artistForm,
-        // })
-        // .then((response) => {
-        //     console.log(response.data);
-        // })
-        // .catch((error) => {
-        //     console.log(error)
-        // })
+        axios.post('http://localhost:5050/aotd', {
+            artistName: this.state.artistForm  
+        })
+        .then((response) => {
+            console.log(response.data);
+            console.log(this.state.artistForm);
+        })
+        .catch((error) => {
+            console.log(error)
+        })
 
         axios.get('http://localhost:5050/aotd')
         .then((response) => {
