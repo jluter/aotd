@@ -25,11 +25,16 @@ class AotdPage extends Component {
         })
         .then((response) => {
             console.log(response.data);
+            this.getArtist();
         })
         .catch((error) => {
             console.log(error)
         })
 
+    }
+    
+    getArtist = () => {
+        
         axios.get('http://localhost:5050/aotd')
         .then((response) => {
             console.log(response);
