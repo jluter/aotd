@@ -1,23 +1,19 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import './App.scss';
 import './styles/_global.scss';
-import Header from './Components/Header/Header';
-import LineAnimation from './Components/LineAnimation/LineAnimation';
-import AboutMe from './Components/AboutMe/AboutMe';
-import Footer from './Components/Footer/Footer';
-import DesktopDescription from './Components/DesktopDescription/DesktopDescription';
+import HomePage from './Pages/HomePage/HomePage';
+import AotdPage from './Pages/AotdPage/AotdPage';
 
 const App: React.FC = () => {
-  return (<div>
-    <Header/>
-    <LineAnimation />
-    <main className='main-container'>
-    <AboutMe />
-    <DesktopDescription />
-    </main>
-    <Footer />
-  </div>
-  )
+  return (
+    <BrowserRouter className="app">
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/aotd" component={AotdPage} />
+      </Switch>
+    </BrowserRouter>
+  );
 }
 
 export default App;
