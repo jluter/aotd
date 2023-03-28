@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import './AotdPage.scss';
 import AotdHeader from '../../Components/AotdHeader/AotdHeader';
+import AotdAlbumInfo from '../../Components/AotdAlbumInfo/AotdAlbumInfo';
 import axios from 'axios';
 
+interface Props {}
 interface State {
     artistForm: string;
     getArtistData: {};
 }
 
-class AotdPage extends Component<{}, State> {
+class AotdPage extends Component<Props, State> {
 
 
-    constructor(props: {}) {
+    constructor(props: Props) {
         super(props);
         this.state = {
             artistForm: '',
@@ -19,7 +21,6 @@ class AotdPage extends Component<{}, State> {
         };
 
     }
-
 
     handleArtistNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({
@@ -68,7 +69,6 @@ class AotdPage extends Component<{}, State> {
         }
     }
 
-
     render() {
 
         return (
@@ -78,6 +78,7 @@ class AotdPage extends Component<{}, State> {
                     <input type="text" onChange={this.handleArtistNameChange} placeholder='Artist name' value={this.state.artistForm}></input>
                     <button type='submit' value='artistButton'>Submit</button>
                 </form>
+                <AotdAlbumInfo getArtistData={this.state.getArtistData}/>
             </main>
     );
     }

@@ -1,10 +1,16 @@
 import React from 'react';
 import './AotdAlbumInfo.scss';
 
-const AotdAlbumInfo: React.FC = () => {
+interface Props {
+    getArtistData: {}
+}
+
+const AotdAlbumInfo: React.FC<Props> = ({ getArtistData }) => {
+
+    console.log("aotdalbuminfo", getArtistData)
     return (
         <div>
-            
+
         </div>
     );
 };
