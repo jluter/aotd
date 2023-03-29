@@ -7,7 +7,7 @@ import axios from 'axios';
 interface Props {}
 interface State {
     artistForm: string;
-    getArtistData: {};
+    getArtistData: [];
 }
 
 class AotdPage extends Component<Props, State> {
@@ -17,7 +17,7 @@ class AotdPage extends Component<Props, State> {
         super(props);
         this.state = {
             artistForm: '',
-            getArtistData: {}
+            getArtistData: []
         };
 
     }
@@ -54,7 +54,7 @@ class AotdPage extends Component<Props, State> {
         axios.get('http://localhost:5050/aotd')
         .then((response) => {
             this.setState({
-                getArtistData: {data: response.data}
+                getArtistData: response.data
             })
         })
         .catch((error) => {
@@ -78,7 +78,10 @@ class AotdPage extends Component<Props, State> {
                     <input type="text" onChange={this.handleArtistNameChange} placeholder='Artist name' value={this.state.artistForm}></input>
                     <button type='submit' value='artistButton'>Submit</button>
                 </form>
-                <AotdAlbumInfo getArtistData={this.state.getArtistData}/>
+                {this.state.getArtistData.length === 0  
+                ? (<h1>Untrue</h1>)
+                : (<AotdAlbumInfo getArtistData={this.state.getArtistData}/>) 
+                }
             </main>
     );
     }
