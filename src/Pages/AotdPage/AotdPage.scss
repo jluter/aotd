@@ -1,0 +1,8 @@
+@use '../../styles/mixins';
+@use '../../styles/typography' as *;
+
+.aotd {
+    font-family: $playfair;
+    height: 100%;
+    width: 100%;
+}

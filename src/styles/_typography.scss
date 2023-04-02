@@ -7,3 +7,18 @@
 }
 
 $archivo: 'Archivo';
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url(../assets/fonts/playfairdisplay-variablefont.woff2) format('woff2');
+    font-weight: normal;
+}
+
+$playfair: 'Playfair Display';
+
+@font-face {
+    font-family: 'Playfair Display Bold';
+    src: url(../assets/fonts/PlayfairDisplay-Bold.ttf) format('ttf');
+}
+
+$playfair-bold: 'Playfair Display Bold';

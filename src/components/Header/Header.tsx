@@ -1,6 +1,8 @@
 import React from 'react';
 import './Header.scss';
+import { Link } from 'react-router-dom';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { BiAlbum } from 'react-icons/bi';
 
 
 const Header: React.FC = (props) => {
@@ -18,6 +20,13 @@ const Header: React.FC = (props) => {
         </h3>
         <nav className="navbar">
           <ul className="navbar__list">
+          <li className="navbar__item">
+              <Link
+                to={`/aotd`}
+              >
+                <BiAlbum size={(windowWidth > 767) ? '2.5rem' : '2rem'} />
+              </Link>
+            </li>
             <li className="navbar__item">
               <a
                 rel="noreferrer noopener"
