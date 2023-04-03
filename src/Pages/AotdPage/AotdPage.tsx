@@ -72,18 +72,25 @@ class AotdPage extends Component<Props, State> {
     render() {
 
         return (
-            <main className='aotd'>
-                <AotdHeader />
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" onChange={this.handleArtistNameChange} placeholder='Artist name' value={this.state.artistForm}></input>
-                    <button type='submit' value='artistButton'>Submit</button>
-                </form>
-                {this.state.getArtistData.length === 0  
-                ? (<h1>Untrue</h1>)
-                : (<AotdAlbumInfo getArtistData={this.state.getArtistData}/>) 
-                }
-            </main>
-    );
+          <main className="aotd">
+            <AotdHeader />
+            {this.state.getArtistData.length === 0 ? (
+              <form onSubmit={this.handleSubmit}>
+                <input
+                  type="text"
+                  onChange={this.handleArtistNameChange}
+                  placeholder="Artist name"
+                  value={this.state.artistForm}
+                ></input>
+                <button type="submit" value="artistButton">
+                  Submit
+                </button>
+              </form>
+            ) : (
+              <AotdAlbumInfo getArtistData={this.state.getArtistData} />
+            )}
+          </main>
+        );
     }
 };
 
