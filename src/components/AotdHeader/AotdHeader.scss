@@ -5,13 +5,23 @@
     display: flex;
     justify-content: center;
     border-bottom: 1px solid blue;
-    margin: 0 2rem;
+    width: 100%;
+    position: relative;
+    
+    &::before {
+        background-image: url("../../assets/img/vinyl-typewriter.jpg");
+        background-position: center;
+        background-size: cover;
+        opacity: 0.6;
+        position: absolute;
+
+    }
 }
 
 .aotd-title {
     font-family: $playfair-bold;
-    font-size: 6rem;
-    margin-top: 5rem;
+    font-size: 3rem;
     width: 100%;
     text-align: center;
+    line-height: 3rem;
 }

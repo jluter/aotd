@@ -75,14 +75,15 @@ class AotdPage extends Component<Props, State> {
           <main className="aotd">
             <AotdHeader />
             {this.state.getArtistData.length === 0 ? (
-              <form onSubmit={this.handleSubmit}>
+              <form className="search-form" onSubmit={this.handleSubmit}>
                 <input
+                  className="search-form__input"
                   type="text"
                   onChange={this.handleArtistNameChange}
                   placeholder="Artist name"
                   value={this.state.artistForm}
                 ></input>
-                <button type="submit" value="artistButton">
+                <button className="search-form__button" type="submit" value="artistButton">
                   Submit
                 </button>
               </form>

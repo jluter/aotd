@@ -5,4 +5,28 @@
     font-family: $playfair;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-form {
+    padding: 5rem 0; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    &__input {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border: none;
+    }
+
+    &__button {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border: none;
+    }
 }
