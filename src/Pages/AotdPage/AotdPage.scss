@@ -9,24 +9,45 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
+    
 }
 
+
+
 .search-form {
-    padding: 5rem 0; 
-    width: 100%;
+    box-shadow: -15px 14px 10px -10px rgba(0,0,0,0.76);
+    border-radius: 1000px;
+    margin: 2rem;
+    width: 80%;
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
+    
 
     &__input {
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        border-top-left-radius: 1000px;
+        border-bottom-left-radius: 1000px;
         border: none;
+        width: 80%;
+        height: 2rem;
+        padding-left: 1rem;
+        font-family: $playfair-bold;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     &__button {
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        width: 20%;
+        height: 2rem;
+        border-top-right-radius: 1000px;
+        border-bottom-right-radius: 1000px;
         border: none;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

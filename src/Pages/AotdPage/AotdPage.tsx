@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './AotdPage.scss';
 import AotdHeader from '../../Components/AotdHeader/AotdHeader';
 import AotdAlbumInfo from '../../Components/AotdAlbumInfo/AotdAlbumInfo';
+import {MdAlbum} from 'react-icons/md';
 import axios from 'axios';
 
 interface Props {}
@@ -84,7 +85,7 @@ class AotdPage extends Component<Props, State> {
                   value={this.state.artistForm}
                 ></input>
                 <button className="search-form__button" type="submit" value="artistButton">
-                  Submit
+                  <MdAlbum size='1.5rem'/>
                 </button>
               </form>
             ) : (
