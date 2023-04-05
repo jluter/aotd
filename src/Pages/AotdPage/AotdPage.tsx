@@ -81,7 +81,7 @@ class AotdPage extends Component<Props, State> {
                   className="search-form__input"
                   type="text"
                   onChange={this.handleArtistNameChange}
-                  placeholder="Artist name"
+                  placeholder="Artist name ..."
                   value={this.state.artistForm}
                 ></input>
                 <button className="search-form__button" type="submit" value="artistButton">

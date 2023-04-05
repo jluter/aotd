@@ -22,9 +22,9 @@ const AotdAlbumInfo: React.FC<Props> = ({ getArtistData }) => {
 
     console.log("aotdalbuminfo", getArtistData)
     return (
-        <div>
+        <section className="returned-artists-container">
             {returnedArtists}
-        </div>
+        </section>
     );
 };
 
