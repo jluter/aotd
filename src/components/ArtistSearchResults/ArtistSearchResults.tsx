@@ -1,11 +1,26 @@
 import React from 'react';
 import './ArtistSearchResults.scss';
+import axios from 'axios';
+
 
 interface Props {
     getArtistData: [];
 }
 
 const AotdAlbumInfo: React.FC<Props> = ({ getArtistData }) => {
+
+    const handleArtistClick = (id: string) => {
+
+        axios.post('http://localhost:5050/aotd/albums', {
+            artistId: id  
+        })
+        .then((response) => {
+            console.log(response.data);
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    }
 
     const returnedArtists = getArtistData.map(artist => {
 
@@ -20,7 +35,7 @@ const AotdAlbumInfo: React.FC<Props> = ({ getArtistData }) => {
         let artistId = artist['id'];
         
         return (
-            <figure key={artistId} className='artist-search-results'>
+            <figure key={artistId} className='artist-search-results' onClick={() => {handleArtistClick(artistId)}}>
                 <img className="artist-search-results__img" src={artistImg} alt={`Album cover art for` + {artistName}}/>
                 <p className='artist-search-results__name'>{artistName}</p>
             </figure>
