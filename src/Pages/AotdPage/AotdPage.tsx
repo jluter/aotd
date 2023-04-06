@@ -57,6 +57,7 @@ class AotdPage extends Component<Props, State> {
             this.setState({
                 getArtistData: response.data
             })
+            console.log("Aotd Page", response.data)
         })
         .catch((error) => {
             console.log(error)
@@ -84,12 +85,34 @@ class AotdPage extends Component<Props, State> {
                   placeholder="Artist name ..."
                   value={this.state.artistForm}
                 ></input>
-                <button className="search-form__button" type="submit" value="artistButton">
-                  <MdAlbum size='1.5rem'/>
+                <button
+                  className="search-form__button"
+                  type="submit"
+                  value="artistButton"
+                >
+                  <MdAlbum size="1.5rem" />
                 </button>
               </form>
             ) : (
-              <AotdAlbumInfo getArtistData={this.state.getArtistData} />
+              <div>
+                <form className="search-form" onSubmit={this.handleSubmit}>
+                  <input
+                    className="search-form__input"
+                    type="text"
+                    onChange={this.handleArtistNameChange}
+                    placeholder="Artist name ..."
+                    value={this.state.artistForm}
+                  ></input>
+                  <button
+                    className="search-form__button"
+                    type="submit"
+                    value="artistButton"
+                  >
+                    <MdAlbum size="1.5rem" />
+                  </button>
+                </form>
+                <AotdAlbumInfo getArtistData={this.state.getArtistData} />
+              </div>
             )}
           </main>
         );
