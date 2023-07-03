@@ -12,19 +12,6 @@ interface Props {
 
 const AotdAlbumInfo: React.FC<Props> = ({ getArtistData, albumData, handleArtistClick }) => {
 
-    // const handleArtistClick = (id: string) => {
-
-    //     axios.post('http://localhost:5050/aotd/albums', {
-    //         artistId: id  
-    //     })
-    //     .then((response) => {
-            
-
-    //     })
-    //     .catch((error) => {
-    //         console.log(error);
-    //     })
-    // }
 
     const returnedArtists = getArtistData.map(artist => {
 

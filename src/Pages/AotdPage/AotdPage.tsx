@@ -6,12 +6,13 @@ import {MdAlbum} from 'react-icons/md';
 import axios from 'axios';
 
 interface Props {
-
+  handleArtistClick: (id: string) => void;
 }
 interface State {
     artistForm: string;
     getArtistData: [];
     albumData: [];
+    artistId: string;
 }
 
 class AotdPage extends Component<Props, State> {
@@ -23,6 +24,7 @@ class AotdPage extends Component<Props, State> {
             artistForm: '',
             getArtistData: [],
             albumData: [],
+            artistId: ''
         };
 
     }
@@ -33,8 +35,10 @@ class AotdPage extends Component<Props, State> {
             artistId: id  
         })
         .then((response) => {
-            console.log(response.data);
-
+          this.setState({
+            albumData: response.data
+          })
+          console.log('test', response.data);
         })
         .catch((error) => {
             console.log(error);
@@ -129,7 +133,7 @@ class AotdPage extends Component<Props, State> {
                     <MdAlbum size="1.5rem" />
                   </button>
                 </form>
-                <AotdAlbumInfo getArtistData={this.state.getArtistData} albumData={this.state.albumData}/>
+                <AotdAlbumInfo getArtistData={this.state.getArtistData} albumData={this.state.albumData} handleArtistClick={this.handleArtistClick}/>
               </div>
             )}
           </main>

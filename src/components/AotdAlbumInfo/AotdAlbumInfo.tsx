@@ -6,30 +6,16 @@ import axios from 'axios';
 interface Props {
     getArtistData: [];
     albumData: [];
+    handleArtistClick: (id: string) => void;
 }
 
-const AotdAlbumInfo: React.FC<Props> = ({ getArtistData, albumData }) => {
-    const [albumInfo, setAlbumInfo] = useState();
+const AotdAlbumInfo: React.FC<Props> = ({ getArtistData, albumData, handleArtistClick }) => {
 
-    const handleArtistClick = (id: string) => {
-
-        axios.post('http://localhost:5050/aotd/albums', {
-            artistId: id  
-        })
-        .then((response) => {
-            setAlbumInfo(response.data);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-    }    
-
-    // console.log("aotdalbuminfo", getArtistData)
     return (
         <div>
             {/* Needs to properly pass state from AotdPage so that when a new artist is searched, it shows <ArtistSearchResults> again, instead of the album list */}
-            { albumInfo 
-            ? <p>{JSON.stringify(albumInfo)}</p>
+            { albumData.length > 0 
+            ? <p>{JSON.stringify(albumData)}</p>
             : <ArtistSearchResults handleArtistClick={handleArtistClick} getArtistData={getArtistData} albumData={albumData}/>
             } 
         </div>
