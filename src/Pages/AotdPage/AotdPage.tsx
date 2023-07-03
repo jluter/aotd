@@ -77,7 +77,8 @@ class AotdPage extends Component<Props, State> {
         axios.get('http://localhost:5050/aotd')
         .then((response) => {
             this.setState({
-                getArtistData: response.data
+                getArtistData: response.data,
+                albumData: []
             })
             console.log("Aotd Page", response.data)
         })
