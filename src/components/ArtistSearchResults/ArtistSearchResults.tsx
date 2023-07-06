@@ -5,22 +5,13 @@ import axios from 'axios';
 
 interface Props {
     getArtistData: [];
+    albumData: [];
+    handleArtistClick: (id: string) => void;
 }
 
-const AotdAlbumInfo: React.FC<Props> = ({ getArtistData }) => {
 
-    const handleArtistClick = (id: string) => {
+const AotdAlbumInfo: React.FC<Props> = ({ getArtistData, albumData, handleArtistClick }) => {
 
-        axios.post('http://localhost:5050/aotd/albums', {
-            artistId: id  
-        })
-        .then((response) => {
-            console.log(response.data);
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-    }
 
     const returnedArtists = getArtistData.map(artist => {
 
@@ -42,7 +33,7 @@ const AotdAlbumInfo: React.FC<Props> = ({ getArtistData }) => {
         )
     })
 
-    console.log("aotdalbuminfo", getArtistData)
+    // console.log("aotdalbuminfo", getArtistData)
     return (
         <section className="returned-artists-container">
             {returnedArtists}

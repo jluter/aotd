@@ -1,2 +1,21 @@
 @use '../../styles/mixins';
 @use '../../styles/variables' as *;
+
+.returned-album-container {
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.album-search-results {
+    max-width: 100vw;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__img {
+        width: 100%;
+    }
+}

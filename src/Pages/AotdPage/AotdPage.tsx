@@ -5,10 +5,14 @@ import AotdAlbumInfo from '../../Components/AotdAlbumInfo/AotdAlbumInfo';
 import {MdAlbum} from 'react-icons/md';
 import axios from 'axios';
 
-interface Props {}
+interface Props {
+  handleArtistClick: (id: string) => void;
+}
 interface State {
     artistForm: string;
     getArtistData: [];
+    albumData: [];
+    artistId: string;
 }
 
 class AotdPage extends Component<Props, State> {
@@ -18,9 +22,27 @@ class AotdPage extends Component<Props, State> {
         super(props);
         this.state = {
             artistForm: '',
-            getArtistData: []
+            getArtistData: [],
+            albumData: [],
+            artistId: ''
         };
 
+    }
+
+      handleArtistClick = (id: string) => {
+
+        axios.post('http://localhost:5050/aotd/albums', {
+            artistId: id  
+        })
+        .then((response) => {
+          this.setState({
+            albumData: response.data
+          })
+          console.log('test', response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
     }
 
     handleArtistNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,7 +77,8 @@ class AotdPage extends Component<Props, State> {
         axios.get('http://localhost:5050/aotd')
         .then((response) => {
             this.setState({
-                getArtistData: response.data
+                getArtistData: response.data,
+                albumData: []
             })
             console.log("Aotd Page", response.data)
         })
@@ -111,7 +134,7 @@ class AotdPage extends Component<Props, State> {
                     <MdAlbum size="1.5rem" />
                   </button>
                 </form>
-                <AotdAlbumInfo getArtistData={this.state.getArtistData} />
+                <AotdAlbumInfo getArtistData={this.state.getArtistData} albumData={this.state.albumData} handleArtistClick={this.handleArtistClick}/>
               </div>
             )}
           </main>
