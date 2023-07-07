@@ -37,10 +37,10 @@ const AddAlbumModal: React.FC<Props> = ({ showMe, album, setShowMe}) => {
                 </h1>
                 <img width='200' src={album.image}/>
             </div>
-                <div>
+                <div className='modal-album__button-container'>
                     {/* Add function to add album to album of the day list on node.js server */}
-                    <button type="button" onClick={() => {addAlbumToAotd(album); console.log(album);}}>Yes</button>
-                    <button type="button" onClick={() => setShowMe('false')}>No</button>
+                    <button className="modal-album__buttons" type="button" onClick={() => {addAlbumToAotd(album)}}>Yes</button>
+                    <button className="modal-album__buttons" type="button" onClick={() => setShowMe('false')}>No</button>
                 </div>
             </section>
         </div>
