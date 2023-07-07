@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './AotdPage.scss';
+import './AddAlbumPage.scss';
 import AotdHeader from '../../Components/AotdHeader/AotdHeader';
 import AotdAlbumInfo from '../../Components/AotdAlbumInfo/AotdAlbumInfo';
 import {MdAlbum} from 'react-icons/md';
@@ -15,7 +15,7 @@ interface State {
     artistId: string;
 }
 
-class AotdPage extends Component<Props, State> {
+class AddAlbumPage extends Component<Props, State> {
 
 
     constructor(props: Props) {
@@ -97,7 +97,7 @@ class AotdPage extends Component<Props, State> {
     render() {
 
         return (
-          <main className="aotd">
+          <main className="add-album">
             <AotdHeader />
             {this.state.getArtistData.length === 0 ? (
               <form className="search-form" onSubmit={this.handleSubmit}>
@@ -142,4 +142,4 @@ class AotdPage extends Component<Props, State> {
     }
 };
 
-export default AotdPage;
+export default AddAlbumPage;

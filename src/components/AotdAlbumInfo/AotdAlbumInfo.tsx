@@ -45,7 +45,7 @@ const AotdAlbumInfo: React.FC<Props> = ({ getArtistData, albumData, handleArtist
 
     return (
         <div>
-            {/* Needs to properly pass state from AotdPage so that when a new artist is searched, it shows <ArtistSearchResults> again, instead of the album list */}
+            {/* Needs to properly pass state from AddAlbumPage so that when a new artist is searched, it shows <ArtistSearchResults> again, instead of the album list */}
             { albumData.length > 0 
             ? <section className="returned-album-container">
                 {returnedAlbums}
