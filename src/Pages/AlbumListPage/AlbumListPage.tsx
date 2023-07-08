@@ -35,14 +35,9 @@ class AlbumListPage extends Component<Props, State> {
  
     render() {
 
-        //console logging the album list state to check it's shape
-        console.log(this.state.aotdList.forEach((album: {album: {artists: [], id: string, name: string, image: string}}, index: number) => {
-            console.log(index, album.album);
-        }))
-
         //assigning the album list state to a mapped object
-        const albumsOfTheDay = this.state.aotdList.map((album: {album: {artists: [], id: string, name: string, image: string}}, index: number) => {
-            const currentAlbum = album.album;
+        const albumsOfTheDay = this.state.aotdList.map((album: {artists: [], id: string, name: string, image: string}, index: number) => {
+            const currentAlbum = album;
 
             //Adjust what this variable will look like
             return <p key={index}>{currentAlbum.name}</p>
