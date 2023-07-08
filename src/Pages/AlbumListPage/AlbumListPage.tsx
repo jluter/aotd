@@ -22,7 +22,6 @@ class AlbumListPage extends Component<Props, State> {
     componentDidMount(): void {
         axios.get('http://localhost:5050/aotd/getAlbumList')
         .then(response => {
-            console.log(typeof response.data);
             this.setState({
                 aotdList: response.data
             })
@@ -36,13 +35,13 @@ class AlbumListPage extends Component<Props, State> {
     render() {
 
         //assigning the album list state to a mapped object
-        const albumsOfTheDay = this.state.aotdList.map((album: {artists: [], id: string, name: string, image: string}, index: number) => {
+        const albumsOfTheDay = this.state.aotdList.map((album: {artists: [], id: string, name: string, image: string, time: string, uuid: string}) => {
 
             //Adjust what this variable will look like
-            return  <div className='album' key={index}>
+            return  <div className='album' key={album.uuid}>
                         <div className='album__name'>{album.name}</div>
                         <div className='album__image-container'>
-                            <img className='album__image' src={album.image}/>
+                            <img className='album__image' src={album.image} alt='Album cover'/>
                         </div>
                     </div>;
         })
