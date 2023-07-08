@@ -11,10 +11,20 @@ interface Props {
 
 const AddAlbumModal: React.FC<Props> = ({ showMe, album, setShowMe}) => {
 
+
+
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+
     const addAlbumToAotd = (album: Object) => {
 
+        const time = new Date();
+        let timeString: string = months[time.getMonth()] + ' ' +time.getDate().toString() + ' ' + time.getFullYear().toString();
+
+
         axios.patch('http://localhost:5050/aotd/addAlbum', {
-            album: album
+            album: album,
+            time: timeString
         })
         .then((response) => {
             console.log(response);

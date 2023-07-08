@@ -37,17 +37,23 @@ class AlbumListPage extends Component<Props, State> {
 
         //assigning the album list state to a mapped object
         const albumsOfTheDay = this.state.aotdList.map((album: {artists: [], id: string, name: string, image: string}, index: number) => {
-            const currentAlbum = album;
 
             //Adjust what this variable will look like
-            return <p key={index}>{currentAlbum.name}</p>
+            return  <div className='album' key={index}>
+                        <div className='album__name'>{album.name}</div>
+                        <div className='album__image-container'>
+                            <img className='album__image' src={album.image}/>
+                        </div>
+                    </div>;
         })
 
 
         return (
           <main className="aotd">
             Album of the Day List
-            {albumsOfTheDay}
+            <section className='album-list-container'>
+                {albumsOfTheDay}
+            </section>
           </main>
         );
     }
