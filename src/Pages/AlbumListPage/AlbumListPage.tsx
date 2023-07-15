@@ -36,7 +36,6 @@ class AlbumListPage extends Component<Props, State> {
 
       return (
         <main className="aotd">
-          Album of the Day List
         <AlbumList aotdList={this.state.aotdList}/>
         </main>
       );
