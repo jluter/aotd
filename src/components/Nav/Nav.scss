@@ -1,0 +1,68 @@
+@use '../../styles/variables' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.nav-menu {
+    width: 50%;
+    margin-left: 50%;
+    height: 100vh;
+    background-color: $timberwolf;
+    &__list {
+        text-align: right;
+        padding: 5rem 2rem 0 0;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        list-style-type: none;
+        gap: 2rem;
+    }
+    
+    &__item {
+        color: $brunswick-green;
+        // padding: 2rem; 
+        width: 25vw;
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+#hide-menu {
+
+    position: fixed;
+    left: 101vw;
+    // left: 0;
+    top: 0;
+    transition: left 0.5s ease-in;
+}
+
+#show-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: left 0.5s ease-in;
+    z-index: 0;
+}
+
+.svg-hamburger {
+    width: 3rem;
+    z-index: 2;
+    stroke: $timberwolf;
+    transition: stroke 0.55s ease-in;
+}
+
+.svg-x {
+    z-index: 2;
+    width: 3rem;
+    stroke: $brunswick-green;
+    transition: stroke 0.55s ease-in;
+}
