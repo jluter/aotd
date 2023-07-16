@@ -29,6 +29,12 @@ class AddAlbumPage extends Component<Props, State> {
 
     }
 
+    handleAddToAlbum = () => {
+      this.setState({
+        getArtistData: []
+      });
+    };
+
       handleArtistClick = (id: string) => {
 
         axios.post('http://localhost:5050/aotd/albums', {
@@ -134,7 +140,7 @@ class AddAlbumPage extends Component<Props, State> {
                     <MdAlbum size="1.5rem" />
                   </button>
                 </form>
-                <AotdAlbumInfo getArtistData={this.state.getArtistData} albumData={this.state.albumData} handleArtistClick={this.handleArtistClick}/>
+                <AotdAlbumInfo getArtistData={this.state.getArtistData} albumData={this.state.albumData} handleArtistClick={this.handleArtistClick} handleAddToAlbum={this.handleAddToAlbum}/>
               </div>
             )}
           </main>

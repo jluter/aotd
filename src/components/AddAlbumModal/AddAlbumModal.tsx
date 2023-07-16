@@ -6,10 +6,11 @@ interface Props {
     // addAlbumToAotd: (id: string) => void;
     showMe: string;
     album: {artist: [], id: string, image: string, name: string};
-    setShowMe: (showMe: string) => void
+    setShowMe: (showMe: string) => void;
+    handleAddToAlbum: () => void;
 }
 
-const AddAlbumModal: React.FC<Props> = ({ showMe, album, setShowMe}) => {
+const AddAlbumModal: React.FC<Props> = ({ showMe, album, setShowMe, handleAddToAlbum}) => {
 
 
 
@@ -34,6 +35,7 @@ const AddAlbumModal: React.FC<Props> = ({ showMe, album, setShowMe}) => {
         })    
 
         setShowMe('false');
+        handleAddToAlbum();
     };
 
     return (

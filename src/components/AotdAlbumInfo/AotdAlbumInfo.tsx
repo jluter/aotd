@@ -7,9 +7,10 @@ interface Props {
     getArtistData: [];
     albumData: [];
     handleArtistClick: (id: string) => void;
+    handleAddToAlbum: () => void;
 }
 
-const AotdAlbumInfo: React.FC<Props> = ({ getArtistData, albumData, handleArtistClick }) => {
+const AotdAlbumInfo: React.FC<Props> = ({ getArtistData, albumData, handleArtistClick, handleAddToAlbum }) => {
 
     let [showMe, setShowMe] = useState('false');    
     let [album, setAlbum] = useState(Object);
@@ -52,7 +53,7 @@ const AotdAlbumInfo: React.FC<Props> = ({ getArtistData, albumData, handleArtist
             </section>
             : <ArtistSearchResults handleArtistClick={handleArtistClick} getArtistData={getArtistData} albumData={albumData}/>
             } 
-            <AddAlbumModal showMe={showMe} setShowMe={setShowMe} album={album}/>
+            <AddAlbumModal showMe={showMe} setShowMe={setShowMe} album={album} handleAddToAlbum={handleAddToAlbum}/>
         </div>
     );
 };
