@@ -1,6 +1,5 @@
 import React from 'react';
 import './ArtistSearchResults.scss';
-import axios from 'axios';
 
 
 interface Props {

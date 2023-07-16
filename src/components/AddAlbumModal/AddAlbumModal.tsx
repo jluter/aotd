@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './AddAlbumModal.scss';
 import axios from 'axios';
 
 interface Props {
-    // addAlbumToAotd: (id: string) => void;
     showMe: string;
     album: {artist: [], id: string, image: string, name: string};
     setShowMe: (showMe: string) => void;
@@ -47,7 +46,7 @@ const AddAlbumModal: React.FC<Props> = ({ showMe, album, setShowMe, handleAddToA
                 <h1 className='modal-album__title'>
                     {album.name}
                 </h1>
-                <img width='200' src={album.image}/>
+                <img width='200' alt="Album cover art" src={album.image}/>
             </div>
                 <div className='modal-album__button-container'>
                     {/* Add function to add album to album of the day list on node.js server */}
